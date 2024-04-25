@@ -61,6 +61,17 @@ TennisGame2.prototype.getScore = function() {
             this.P2res = "Thirty";
         score = this.P1res + "-" + this.P2res;
     }
+    if (this.P2point > this.P1point && this.P2point < 4) {
+        if (this.P2point === 2)
+            this.P2res = "Thirty";
+        if (this.P2point === 3)
+            this.P2res = "Forty";
+        if (this.P1point === 1)
+            this.P1res = "Fifteen";
+        if (this.P1point === 2)
+            this.P1res = "Thirty";
+        score = this.P1res + "-" + this.P2res;
+    }
 
     // Considérer la refonte de la logique pour éviter la duplication
     if (this.P1point > this.P2point && this.P2point >= 3) {
